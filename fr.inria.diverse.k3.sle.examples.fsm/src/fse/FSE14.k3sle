@@ -2,7 +2,7 @@ package fse
 
 /*-- Structure --*/
 metamodel Fsm {
-	ecore  "platform:/resource/fr.inria.diverse.k3.examples.fsm.metamodel/model/FSM.ecore"
+	ecore  "platform:/resource/fr.inria.diverse.k3.sle.examples.fsm.metamodel/model/FSM.ecore"
 	
 	aspect ExecutableFsmAspect
 	aspect ExecutableStateAspect
@@ -10,7 +10,7 @@ metamodel Fsm {
 }
 
 metamodel TimedFsm {
-	ecore  "platform:/resource/fr.inria.diverse.k3.examples.timedfsm.metamodel/model/TimedFSM.ecore"
+	ecore  "platform:/resource/fr.inria.diverse.k3.sle.examples.timedfsm.metamodel/model/TimedFSM.ecore"
 	
 	aspect TimedFsmAspect
 	aspect TimedStateAspect
