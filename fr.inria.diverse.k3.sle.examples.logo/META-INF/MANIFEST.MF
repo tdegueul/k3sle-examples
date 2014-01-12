@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Logo
+Bundle-SymbolicName: fr.inria.diverse.k3.sle.examples.logo
+Bundle-Version: 1.0.0.qualifier
+Export-Package: fr.inria.diverse.k3.sle.examples.logo,
+ fr.inria.diverse.k3.sle.examples.logo.logo.adapters.logomt,
+ fr.inria.diverse.k3.sle.examples.logo.logomt
+Require-Bundle: org.eclipse.emf;bundle-version="2.6.0",
+ org.eclipse.emf.ecore;bundle-version="2.9.1",
+ org.eclipse.emf.ecore.xmi;bundle-version="2.9.1",
+ fr.inria.diverse.k3.sle.lib;bundle-version="0.1.0"

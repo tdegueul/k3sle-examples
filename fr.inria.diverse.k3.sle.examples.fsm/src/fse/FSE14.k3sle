@@ -1,0 +1,38 @@
+package fse
+
+/*-- Structure --*/
+metamodel Fsm {
+	ecore  "platform:/resource/fr.inria.diverse.k3.examples.fsm.metamodel/model/FSM.ecore"
+	
+	aspect ExecutableFsmAspect
+	aspect ExecutableStateAspect
+	aspect ExecutableTransitionAspect
+}
+
+metamodel TimedFsm {
+	ecore  "platform:/resource/fr.inria.diverse.k3.examples.timedfsm.metamodel/model/TimedFSM.ecore"
+	
+	aspect TimedFsmAspect
+	aspect TimedStateAspect
+	aspect TimedTransitionAspect
+}
+
+modeltype FsmMT extract Fsm {}
+modeltype TimedFsmMT extract TimedFsm {}
+
+/*-- Transformations --*/
+transformation execute(FsmMT fsm, String input) {
+	val root = fsm.contents.head as fse.fsmmt.FSM
+	
+	root.execute(input)
+	println
+}
+
+@Main
+transformation main() {
+	val fsm  =      Fsm.load("input/Simple.fsm",      FsmMT)
+	val tfsm = TimedFsm.load("input/Simple.timedfsm", FsmMT)
+	
+	execute.call(fsm,  "adcdce")
+	execute.call(tfsm, "a")
+}

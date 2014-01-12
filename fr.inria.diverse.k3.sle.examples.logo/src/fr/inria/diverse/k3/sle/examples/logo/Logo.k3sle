@@ -1,0 +1,54 @@
+package fr.inria.diverse.k3.sle.examples.logo
+
+/*-- Structure --*/
+metamodel Logo {
+	ecore  "platform:/resource/fr.inria.diverse.k3.sle.examples.logo.metamodel/model/Logo.ecore"
+	
+	aspect InstructionAspect
+	aspect PrimitiveAspect
+	aspect BackAspect
+	aspect ForwardAspect
+	aspect LeftAspect
+	aspect RightAspect
+	aspect PenDownAspect
+	aspect PenUpAspect
+	aspect ClearAspect
+	aspect ExpressionAspect
+	aspect ConstantAspect
+	aspect ProcCallAspect
+	aspect BlockAspect
+	aspect ControlStructureAspect
+	aspect IfAspect
+	aspect RepeatAspect
+	aspect WhileAspect
+	aspect ParameterAspect
+	aspect ParameterCallAspect
+	aspect BinaryExpAspect
+	aspect PlusAspect
+	aspect MinusAspect
+	aspect MultAspect
+	aspect DivAspect
+	aspect EqualsAspect
+	aspect GreaterAspect
+	aspect LowerAspect
+	aspect ProcDeclarationAspect
+	aspect LogoProgramAspect
+}
+
+modeltype LogoMT extract Logo {}
+
+/*-- Transformations --*/
+transformation execute(LogoMT root) {
+	val prog = root.contents.head as fr.inria.diverse.k3.sle.examples.logo.logomt.LogoProgram
+	val ctx  = new Context
+	
+	prog.eval(ctx)
+	new Window(ctx.turtle)
+}
+
+@Main
+transformation logo_main() {
+	val logo = Logo.load("input/hexa.logoasm", LogoMT)
+	
+	execute.call(logo)
+}
