@@ -1,4 +1,4 @@
-package fse
+package fr.inria.diverse.k3.sle.examples.fsm
 
 import fr.inria.triskell.k3.Aspect
 
@@ -6,9 +6,9 @@ import timedfsm.FSM
 import timedfsm.State
 import timedfsm.Transition
 
-import static extension fse.TimedFsmAspect.*
-import static extension fse.TimedStateAspect.*
-import static extension fse.TimedTransitionAspect.*
+import static extension fr.inria.diverse.k3.sle.examples.fsm.TimedFsmAspect.*
+import static extension fr.inria.diverse.k3.sle.examples.fsm.TimedStateAspect.*
+import static extension fr.inria.diverse.k3.sle.examples.fsm.TimedTransitionAspect.*
 
 @Aspect(className = FSM)
 class TimedFsmAspect

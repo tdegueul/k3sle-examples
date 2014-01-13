@@ -1,4 +1,4 @@
-package fse
+package fr.inria.diverse.k3.sle.examples.fsm
 
 /*-- Structure --*/
 metamodel Fsm {
@@ -22,7 +22,7 @@ modeltype TimedFsmMT extract TimedFsm {}
 
 /*-- Transformations --*/
 transformation execute(FsmMT fsm, String input) {
-	val root = fsm.contents.head as fse.fsmmt.FSM
+	val root = fsm.contents.head as fr.inria.diverse.k3.sle.examples.fsm.fsmmt.FSM
 	
 	root.execute(input)
 	println

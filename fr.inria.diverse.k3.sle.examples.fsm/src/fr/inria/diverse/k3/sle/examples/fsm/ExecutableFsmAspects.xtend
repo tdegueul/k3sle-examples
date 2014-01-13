@@ -1,4 +1,4 @@
-package fse
+package fr.inria.diverse.k3.sle.examples.fsm
 
 import fr.inria.triskell.k3.Aspect
 
@@ -6,9 +6,9 @@ import fsm.FSM
 import fsm.State
 import fsm.Transition
 
-import static extension fse.ExecutableFsmAspect.*
-import static extension fse.ExecutableStateAspect.*
-import static extension fse.ExecutableTransitionAspect.*
+import static extension fr.inria.diverse.k3.sle.examples.fsm.ExecutableFsmAspect.*
+import static extension fr.inria.diverse.k3.sle.examples.fsm.ExecutableStateAspect.*
+import static extension fr.inria.diverse.k3.sle.examples.fsm.ExecutableTransitionAspect.*
 
 @Aspect(className = FSM)
 class ExecutableFsmAspect
