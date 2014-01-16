@@ -6,17 +6,17 @@ import fr.inria.diverse.k3.sle.examples.fsm.fsmmt.FSM
 metamodel Fsm {
 	ecore  "platform:/resource/fr.inria.diverse.k3.sle.examples.fsm.metamodel/model/FSM.ecore"
 	
-	aspect ExecutableFsmAspect
-	aspect ExecutableStateAspect
-	aspect ExecutableTransitionAspect
+	aspect fr.inria.diverse.k3.sle.examples.fsm.ExecutableFsmAspect
+	aspect fr.inria.diverse.k3.sle.examples.fsm.ExecutableStateAspect
+	aspect fr.inria.diverse.k3.sle.examples.fsm.ExecutableTransitionAspect
 }
 
 metamodel TimedFsm {
 	ecore  "platform:/resource/fr.inria.diverse.k3.sle.examples.timedfsm.metamodel/model/TimedFSM.ecore"
 	
-	aspect TimedFsmAspect
-	aspect TimedStateAspect
-	aspect TimedTransitionAspect
+	aspect fr.inria.diverse.k3.sle.examples.fsm.TimedFsmAspect
+	aspect fr.inria.diverse.k3.sle.examples.fsm.TimedStateAspect
+	aspect fr.inria.diverse.k3.sle.examples.fsm.TimedTransitionAspect
 }
 
 modeltype FsmMT extract Fsm {}

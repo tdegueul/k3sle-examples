@@ -4,35 +4,35 @@ package fr.inria.diverse.k3.sle.examples.logo
 metamodel Logo {
 	ecore  "platform:/resource/fr.inria.diverse.k3.sle.examples.logo.metamodel/model/Logo.ecore"
 	
-	aspect InstructionAspect
-	aspect PrimitiveAspect
-	aspect BackAspect
-	aspect ForwardAspect
-	aspect LeftAspect
-	aspect RightAspect
-	aspect PenDownAspect
-	aspect PenUpAspect
-	aspect ClearAspect
-	aspect ExpressionAspect
-	aspect ConstantAspect
-	aspect ProcCallAspect
-	aspect BlockAspect
-	aspect ControlStructureAspect
-	aspect IfAspect
-	aspect RepeatAspect
-	aspect WhileAspect
-	aspect ParameterAspect
-	aspect ParameterCallAspect
-	aspect BinaryExpAspect
-	aspect PlusAspect
-	aspect MinusAspect
-	aspect MultAspect
-	aspect DivAspect
-	aspect EqualsAspect
-	aspect GreaterAspect
-	aspect LowerAspect
-	aspect ProcDeclarationAspect
-	aspect LogoProgramAspect
+	aspect fr.inria.diverse.k3.sle.examples.logo.InstructionAspect
+	aspect fr.inria.diverse.k3.sle.examples.logo.PrimitiveAspect
+	aspect fr.inria.diverse.k3.sle.examples.logo.BackAspect
+	aspect fr.inria.diverse.k3.sle.examples.logo.ForwardAspect
+	aspect fr.inria.diverse.k3.sle.examples.logo.LeftAspect
+	aspect fr.inria.diverse.k3.sle.examples.logo.RightAspect
+	aspect fr.inria.diverse.k3.sle.examples.logo.PenDownAspect
+	aspect fr.inria.diverse.k3.sle.examples.logo.PenUpAspect
+	aspect fr.inria.diverse.k3.sle.examples.logo.ClearAspect
+	aspect fr.inria.diverse.k3.sle.examples.logo.ExpressionAspect
+	aspect fr.inria.diverse.k3.sle.examples.logo.ConstantAspect
+	aspect fr.inria.diverse.k3.sle.examples.logo.ProcCallAspect
+	aspect fr.inria.diverse.k3.sle.examples.logo.BlockAspect
+	aspect fr.inria.diverse.k3.sle.examples.logo.ControlStructureAspect
+	aspect fr.inria.diverse.k3.sle.examples.logo.IfAspect
+	aspect fr.inria.diverse.k3.sle.examples.logo.RepeatAspect
+	aspect fr.inria.diverse.k3.sle.examples.logo.WhileAspect
+	aspect fr.inria.diverse.k3.sle.examples.logo.ParameterAspect
+	aspect fr.inria.diverse.k3.sle.examples.logo.ParameterCallAspect
+	aspect fr.inria.diverse.k3.sle.examples.logo.BinaryExpAspect
+	aspect fr.inria.diverse.k3.sle.examples.logo.PlusAspect
+	aspect fr.inria.diverse.k3.sle.examples.logo.MinusAspect
+	aspect fr.inria.diverse.k3.sle.examples.logo.MultAspect
+	aspect fr.inria.diverse.k3.sle.examples.logo.DivAspect
+	aspect fr.inria.diverse.k3.sle.examples.logo.EqualsAspect
+	aspect fr.inria.diverse.k3.sle.examples.logo.GreaterAspect
+	aspect fr.inria.diverse.k3.sle.examples.logo.LowerAspect
+	aspect fr.inria.diverse.k3.sle.examples.logo.ProcDeclarationAspect
+	aspect fr.inria.diverse.k3.sle.examples.logo.LogoProgramAspect
 }
 
 modeltype LogoMT extract Logo {}
@@ -42,7 +42,7 @@ transformation execute(LogoMT root) {
 	val prog = root.contents.head as fr.inria.diverse.k3.sle.examples.logo.logomt.LogoProgram
 	val ctx  = new Context
 	
-	prog.eval(ctx)
+	//prog.eval(ctx)
 	new Window(ctx.turtle)
 }
 
