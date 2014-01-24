@@ -14,11 +14,11 @@ import static extension fr.inria.diverse.k3.sle.examples.fsm.ExecutableTransitio
 class ExecutableFsmAspect
 {
 	State current
-	
+
 	def void execute(String input) {
 		if (_self.current == null)
 			_self.current = _self.initialState
-		
+
 		for (i : 0 ..< input.length) {
 			try
 			{
@@ -39,12 +39,12 @@ class ExecutableStateAspect
 {
 	def void step(char c) {
 		val validTrans = _self.outgoingTransition.filter[input.equals(String.valueOf(c))]
-		
+
 		if (validTrans.empty)
 			throw new NoFireableTransition
 		if (validTrans.size > 1)
 			throw new NonDeterminism
-		
+
 		validTrans.head.fire
 	}
 }
