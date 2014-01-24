@@ -12,9 +12,7 @@ metamodel Fsm {
 }
 
 metamodel TimedFsm inherits Fsm {
-	aspect fr.inria.diverse.k3.sle.examples.fsminheritance.TimedFsmAspect
-	aspect fr.inria.diverse.k3.sle.examples.fsminheritance.TimedStateAspect
-	aspect fr.inria.diverse.k3.sle.examples.fsminheritance.TimedTransitionAspect
+	aspect TimedTransitionAspect
 }
 
 modeltype FsmMT extract Fsm {}

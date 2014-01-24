@@ -9,5 +9,6 @@
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/fr.inria.diverse.k3.sle.examples.fsm.metamodel"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/TimedFsmGenerated"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/fr.inria.diverse.k3.sle.examples.logo.metamodel"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
