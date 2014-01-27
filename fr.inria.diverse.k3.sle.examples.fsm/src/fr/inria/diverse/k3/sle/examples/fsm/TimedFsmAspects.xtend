@@ -29,6 +29,9 @@ class TimedFsmAspect
 			} catch (NonDeterminism e) {
 				println("Non-determinism in " + _self.current.name + " for input " + input.charAt(i))
 				return
+			} catch (TimeException e) {
+				println("Time exeption in " + _self.current.name + " for input " + input.charAt(i))
+				return
 			}
 		}
 	}
@@ -52,12 +55,22 @@ class TimedStateAspect
 @Aspect(className = Transition)
 class TimedTransitionAspect
 {
+	int time
+
 	def void fire() {
-		print(_self.output + "(" + _self.waitingTime + ")")
-		_self.source.owningFSM.current = _self.target
+		if (_self.timeIsOk) {
+			print(_self.output + "(" + _self.waitingTime + ")")
+			_self.source.owningFSM.current = _self.target
+		} else
+			throw new TimeException
+	}
+
+	def boolean timeIsOk() {
+		_self.time == 0
 	}
 }
 
 abstract class FsmException extends Exception {}
 class NoFireableTransition extends FsmException {}
 class NonDeterminism extends FsmException {}
+class TimeException extends FsmException {}

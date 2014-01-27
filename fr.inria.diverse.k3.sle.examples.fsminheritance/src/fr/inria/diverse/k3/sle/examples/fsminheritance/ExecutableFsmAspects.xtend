@@ -66,13 +66,18 @@ class TimedTransitionAspect extends ExecutableTransitionAspect
 
 	@OverrideAspectMethod
 	def void fire() {
-		if (_self.time != 0)
+		if (_self.timeIsOk)
 			_self.super_fire
 		else
-			print("TimeNOK")
+			throw new TimeException
+	}
+
+	def boolean timeIsOk() {
+		_self.time == 0
 	}
 }
 
 abstract class FsmException extends Exception {}
 class NoFireableTransition extends FsmException {}
 class NonDeterminism extends FsmException {}
+class TimeException extends FsmException {}
